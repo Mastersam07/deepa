@@ -14,7 +14,7 @@ final routemaster = RoutemasterDelegate(
     return RouteMap(
       onUnknownRoute: (_) => const Redirect('/404'),
       routes: {
-        '/': (info) => const CupertinoTabPage(
+        '/': (_) => const CupertinoTabPage(
               child: HomePage(),
               paths: ['/product', '/search', '/orders', '/support', '/profile'],
             ),
