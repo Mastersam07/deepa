@@ -27,9 +27,9 @@ samples, guidance on mobile development, and a full API reference.
 - [ ] Technical deep dive
 
 ## Technical Roadmap
-- [ ] Routing with router api (nav 2.0)
-- [ ] Unilinks ios
-- [ ] Applinks android
+- [x] Routing with router api (nav 2.0)
+- [x] Unilinks ios
+- [x] Applinks android
 - [ ] Custom schemes
 - [ ] Routing with navigator api (nav 1.0) and deep link support
 - [ ] Deferred deep links (Optional)
