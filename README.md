@@ -28,8 +28,14 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Technical Roadmap
 - [x] Routing with router api (nav 2.0)
-- [x] Unilinks ios
-- [x] Applinks android
-- [ ] Custom schemes
+- [x] Unilinks ios - scheme://host/path e.g. https://hephwinglabs.xyz/product
+- [x] Applinks android - scheme://host/path e.g. https://hephwinglabs.xyz/product
+- [x] Custom schemes - scheme://host/path e.g. deepa://hephwinglabs.xyz/product
 - [ ] Routing with navigator api (nav 1.0) and deep link support
 - [ ] Deferred deep links (Optional)
+
+
+## Test Links
+- https://hephwinglabs.xyz/product/987
+- http://hephwinglabs.xyz/product/997 
+- deepa://hephwinglabs.xyz/product/997
