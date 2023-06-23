@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:hephwinglabs.xyz?mode=developer+managed</string>
+		<string>applinks:hephwinglabs.xyz</string>
 	</array>
 </dict>
 </plist>
