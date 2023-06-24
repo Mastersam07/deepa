@@ -1,17 +1,39 @@
 import 'package:flutter/cupertino.dart';
-import 'package:routemaster/routemaster.dart';
+import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+import 'view.dart';
+
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final tabState = CupertinoTabPage.of(context);
+  State<HomeView> createState() => _HomeViewState();
+}
 
-    return CupertinoTabScaffold(
-      controller: tabState.controller,
-      tabBuilder: tabState.tabBuilder,
-      tabBar: CupertinoTabBar(
+class _HomeViewState extends State<HomeView> {
+  int _page = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: IndexedStack(
+        index: _page,
+        children: const [
+          ProductListing(),
+          SearchPage(),
+          OrdersPage(),
+          SupportPage(),
+          ProfilePage(),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        enableFeedback: false,
+        currentIndex: _page,
+        onTap: (value) {
+          setState(() {
+            _page = value;
+          });
+        },
         items: const [
           BottomNavigationBarItem(
             label: 'Home',
