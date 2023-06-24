@@ -9,17 +9,29 @@ import 'src/state/appstate.dart';
 import 'src/view_navigator/view.dart';
 
 final router = RegexRouter.create({
-  productDetailsViewRoute: (context, args) => ProductDetails(
-        id: args["id"],
-      ), // Access "object" arguments from `NavigatorState.pushNamed`.
+  // Access "object" arguments from `NavigatorState.pushNamed`.
+  productDetailsViewRoute: (context, args) => ProductDetails(id: args["id"]),
 });
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    AppState.instance.addListener(() {
+      setState(() {});
+    });
+  }
 
   // This widget is the root of your application.
   @override
@@ -36,9 +48,15 @@ class MyApp extends StatelessWidget {
           homeViewRoute: (BuildContext context) => const HomeView(),
           productViewRoute: (BuildContext context) => const ProductListing(),
           searchViewRoute: (BuildContext context) => const SearchPage(),
-          ordersViewRoute: (BuildContext context) => const OrdersPage(),
+          ordersViewRoute: (BuildContext context) =>
+              context.read<AppState>().isLoggedIn
+                  ? const OrdersPage()
+                  : const NotAuthPage(),
           supportViewRoute: (BuildContext context) => const SupportPage(),
-          profileViewRoute: (BuildContext context) => const ProfilePage(),
+          profileViewRoute: (BuildContext context) =>
+              context.read<AppState>().isLoggedIn
+                  ? const ProfilePage()
+                  : const NotAuthPage(),
           notFoundViewRoute: (BuildContext context) => const NotFoundPage(),
           noAuthViewRoute: (BuildContext context) => const NotAuthPage(),
         },

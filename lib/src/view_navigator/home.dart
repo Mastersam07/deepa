@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../state/appstate.dart';
 import 'view.dart';
 
 class HomeView extends StatefulWidget {
@@ -14,20 +15,19 @@ class _HomeViewState extends State<HomeView> {
   int _page = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: IndexedStack(
-        index: _page,
-        children: const [
-          ProductListing(),
-          SearchPage(),
-          OrdersPage(),
-          SupportPage(),
-          ProfilePage(),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        enableFeedback: false,
+    return CupertinoTabScaffold(
+      tabBuilder: (context, index) => [
+        const ProductListing(),
+        const SearchPage(),
+        context.read<AppState>().isLoggedIn
+            ? const OrdersPage()
+            : const NotAuthPage(),
+        const SupportPage(),
+        context.read<AppState>().isLoggedIn
+            ? const ProfilePage()
+            : const NotAuthPage(),
+      ].elementAt(_page),
+      tabBar: CupertinoTabBar(
         currentIndex: _page,
         onTap: (value) {
           setState(() {
