@@ -12,6 +12,14 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  @override
+  void initState() {
+    super.initState();
+    AppState.instance.addListener(() {
+      setState(() {});
+    });
+  }
+
   int _page = 0;
   @override
   Widget build(BuildContext context) {
