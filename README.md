@@ -31,7 +31,7 @@ samples, guidance on mobile development, and a full API reference.
 - [x] Unilinks ios - scheme://host/path e.g. https://hephwinglabs.xyz/product
 - [x] Applinks android - scheme://host/path e.g. https://hephwinglabs.xyz/product
 - [x] Custom schemes - scheme://host/path e.g. deepa://hephwinglabs.xyz/product
-- [ ] Routing with navigator api (nav 1.0) and deep link support
+- [x] Routing with navigator api (nav 1.0) and deep link support
 - [ ] Deferred deep links (Optional)
 
 
