@@ -144,6 +144,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.5"
+  regex_router:
+    dependency: "direct main"
+    description:
+      name: regex_router
+      sha256: e68f2edb25712e72d9ec0a18c7dbeb67193bbed18f1ae4c5520e649641799bb3
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.2"
   routemaster:
     dependency: "direct main"
     description:
