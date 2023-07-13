@@ -8,6 +8,10 @@ class ProductDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Product $id'),
+      ),
       body: Center(
         child: Text('Product Details $id'),
       ),

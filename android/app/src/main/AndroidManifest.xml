@@ -28,7 +28,8 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="http" android:host="hephwinglabs.xyz" />
+                <data android:host="hephwinglabs.xyz" />
+                <data android:scheme="http" ></data>
                 <data android:scheme="https" />
             </intent-filter>
             <intent-filter android:autoVerify="true" android:label="customSchemeDeepLink">
