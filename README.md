@@ -16,15 +16,15 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 ## Theoretical Roadmap
-- [ ] Background
-- [ ] Most common approach to apps
-- [ ] Replacing the approach with deep links
-- [ ] What are deep links - overview and format
-- [ ] Kinds of deep links - applinks, unilinks, custom scheme
-- [ ] Recommendation and why
-- [ ] Limitation of custom schemes
-- [ ] Why deep links/benefits
-- [ ] Technical deep dive
+- [x] Background
+- [x] Most common approach to apps
+- [x] Replacing the approach with deep links
+- [x] What are deep links - overview and format
+- [x] Kinds of deep links - applinks, unilinks, custom scheme
+- [x] Recommendation and why
+- [x] Limitation of custom schemes
+- [x] Why deep links/benefits
+- [x] Technical deep dive
 
 ## Technical Roadmap
 - [x] Routing with router api (nav 2.0)
